@@ -41,3 +41,25 @@ button:hover {
     left: 0;
     top: 0;
 }
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+
+}
+.sidebar li {
+    margin: 15px 0; /* 20px acima e abaixo, 0px a esquerda e direita*/
+}
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.container {
+    flex-grow: 1; /* capacidade de um elemento crescer*/
+    padding: 20px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
