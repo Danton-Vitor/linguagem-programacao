@@ -12,3 +12,6 @@ input {
 button {
     margin-top: 10px;
 }
+body {
+    background-color: rgb(102, 102, 197);
+}
