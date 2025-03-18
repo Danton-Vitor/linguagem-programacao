@@ -18,8 +18,8 @@ function exe2(){
     let nro1 = Number(document.getElementById("nro1").value)
     let nro2 = Number(document.getElementById("nro2").value)
     let nro3 = Number(document.getElementById("nro3").value)
-    let sub = nro1 * nro2 * nro3
-    document.getElementById("sub").innerText = "Resultado: " + sub
+    let multiplicacao = nro1 * nro2 * nro3
+    document.getElementById("multiplicacao").innerText = "Resultado: " + multiplicacao
 }
 function exe3(){
     let nro1 = Number(document.getElementById("nro1").value)
@@ -28,9 +28,9 @@ function exe3(){
         alert("Número 2 precisa ser diferente de 0")
     }
     else {
-        sub = nro1 / nro2
+        divisao = nro1 / nro2
     }
-    document.getElementById("sub").innerText = "Resultado: " + sub
+    document.getElementById("divisao").innerText = "Resultado: " + divisao
 }
 function exe4(){
     let nota1 = Number(document.getElementById("nota1").value)
