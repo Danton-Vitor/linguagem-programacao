@@ -124,56 +124,46 @@ function exe8(){
     }
 }
 function exe9(){
-    let saldo_m = Number(document.getElementById("saldo_m").value)
-    let credito = Number(document.getElementById("credito").value)
-    if (saldo_m <= 200){
-        credito = saldo_m * 0.1
-        document.getElementById("saldo").innerText = "Saldo Médio R$" + saldo_m
-        document.getElementById("credito").innerText = "Crédito R$" + credito
+    let saldo = Number(document.getElementById("saldo").value)
+    let credito = 0 // inicializa com zero
+    if (saldo > 0 && saldo <= 200){
+        credito = saldo * 0.1
     }
-    else if (saldo_m > 200 && saldo_m <= 300){
-        credito = saldo_m * 0.2
-        document.getElementById("saldo").innerText = "Saldo Médio R$" + saldo_m
-        document.getElementById("credito").innerText = "Crédito R$" + credito
+    else if (saldo > 200 && saldo <= 300){
+        credito = saldo * 0.2
     }
-    else if (saldo_m > 300 && saldo_m <= 400){
-        credito = saldo_m * 0.25
-        document.getElementById("saldo").innerText = "Saldo Médio R$" + saldo_m
-        document.getElementById("credito").innerText = "Crédito R$" + credito
+    else if (saldo > 300 && saldo <= 400){
+        credito = saldo * 0.25
     }
-    else if (saldo_m > 400){
-        credito = saldo_m * 0.3
-        document.getElementById("saldo").innerText = "Saldo Médio R$" + saldo_m
-        document.getElementById("credito").innerText = "Crédito R$" + credito
+    else if (saldo > 400){
+        credito = saldo * 0.3
     }
+    else {// saldo negativo
+        document.getElementById("credito").innerHTML = "Saldo não pode ser negativo"
+        return //saiu da função
+    }
+    document.getElementById("credito").innerHTML = `Saldo R$ ${saldo} e Crédito R$ ${credito}` //template string
 }
 function exe10(){
     let custo = Number(document.getElementById("custo").value)
-    let imposto = Number(document.getElementById("imposto").value)
-    let distribuidor = Number(document.getElementById("distribuidor").value)
-    let preco = Number(document.getElementById("preco").value)
-    if (custo <= 12000){
+    let imposto = 0
+    let distribuidor = 0
+    if (custo >= 0 && custo < 12000){
         distribuidor = custo * 0.05
-        imposto = "Isento"
-        preco = custo + distribuidor
-        document.getElementById("preco").innerText = "Preço Carro R$" + preco
-        document.getElementById("imposto").innerText = "valor Imposto: " + imposto
-        document.getElementById("distribuidor").innerText = "Valor Distribuidor R$: " + distribuidor
+        imposto = 0
     }
-    else if (custo < 25000){
+    else if (custo >= 12000 && custo <= 25000){
         distribuidor = custo * 0.1
         imposto = custo * 0.15
-        preco = custo + distribuidor + imposto
-        document.getElementById("preco").innerText = "Preço Carro R$" + preco
-        document.getElementById("imposto").innerText = "Valor Imposto R$: " + imposto
-        document.getElementById("distribuidor").innerText = "Valor Distribuidor R$: " + distribuidor
+    }
+    else if (custo > 25000){
+        distribuidor = custo * 0.15
+        imposto = custo * 0.2 
     }
     else{
-        distribuidor = custo * 0.15
-        imposto = custo * 0.2
-        preco = custo + distribuidor + imposto
-        document.getElementById("preco").innerText = "Preço Carro R$" + preco
-        document.getElementById("imposto").innerText = "Valor Imposto R$: " + imposto
-        document.getElementById("distribuidor").innerText = "Valor Distribuidor R$: " + distribuidor
+        document.getElementById("consumidor").innerHTML = "Custo negativo"
+        return
     }
+    let consumidor = custo + imposto + distribuidor 
+    document.getElementById("consumidor").innerHTML = `Custo da fábrica R$ ${custo} <br/> Distribuidor R$ ${distribuidor} <br/> Imposto R$ ${imposto}`
 }
