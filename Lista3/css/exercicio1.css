@@ -17,5 +17,8 @@ body {
 }
 table {
     margin-top: 10px;
-    
+}
+.dif {
+    height: 35vh;
+    overflow: auto;
 }
