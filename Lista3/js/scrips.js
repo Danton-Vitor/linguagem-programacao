@@ -74,13 +74,59 @@ function exe4(){
     }
     document.getElementById("tabuada").innerHTML = resultado 
 }
-    function exe5(){
-        let resultado = ""
-        for (let nro = 1; nro <= 10; nro++){
-            resultado = resultado + `<br/>Tabuada do Nº ${nro} <br/>`  
-            for(let i = 1; i <= 10; i++){
-                resultado = resultado + `${nro} x ${i} = ${nro*i} <br/>`
-            }    
-        }
-        document.getElementById("tabuada").innerHTML = resultado
+function exe5(){
+    let resultado = ""
+    for (let nro = 1; nro <= 10; nro++){
+        resultado = resultado + `<br/>Tabuada do Nº ${nro} <br/>`  
+         for(let i = 1; i <= 10; i++){
+            resultado = resultado + `${nro} x ${i} = ${nro*i} <br/>`
+        }    
     }
+    document.getElementById("tabuada").innerHTML = resultado
+}
+function exe6(){
+    let codigo, valor, totalVista = 0, totalPrazo = 0
+    for (let i = 1; i <= 5; i++){
+        do {
+            codigo = prompt(`Digite V (à vista) ou P (à prazo)`).toUpperCase()
+        }
+        while (codigo != 'V' && codigo != "P")
+        valor = Number(prompt(`Digite o valor da transação`))
+        if (codigo == 'V'){
+            totalVista += valor
+        }
+        else {
+            totalPrazo += valor
+        }
+    }
+    document.getElementById("resultado").innerHTML = `Total à vista R$ ${totalVista} <br/> Total à prazo R$ ${totalPrazo} <br/> Total das compras R$ ${totalVista + totalPrazo} <br/> Valor da primeira parcela ${totalPrazo/3}`
+}
+function exe7(){
+    let idade, altura, peso, idade50 = 0, idade10e20 = 0, somaAltura = 0, peso40 = 0
+    for (let i = 1; i <= 2; i++){
+        do {
+            idade = Number(prompt(`Informe a idade`))
+        }
+        while (idade < 0)
+        do {
+            altura = Number(prompt(`Informe a idade`))
+        }
+        while (altura < 0)
+        do {
+            peso = Number(prompt(`Informe a idade`))
+        }
+        while (peso < 0)
+        
+        if (idade > 50){
+            idade50++
+        }
+        if (idade >= 10 && idade <= 20){
+            idade10e20++
+            somaAltura += altura
+        }
+        if (peso < 40){
+            peso40++
+        }
+    }
+    document.getElementById("resultado").innerHTML = `Pessoas c/ idade superior a 50: ${idade50} <br/> Média altura idade entre 10 e 20: ${somaAltura/idade10e20} <br/> Porcentagem de pessoas peso inferior a 40Kg: ${peso40/5*100}%`
+}
