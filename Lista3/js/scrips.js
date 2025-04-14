@@ -90,7 +90,7 @@ function exe6(){
         do {
             codigo = prompt(`Digite V (à vista) ou P (à prazo)`).toUpperCase()
         }
-        while (codigo != 'V' && codigo != "P")
+        while (codigo != 'V' && codigo != 'P')
         valor = Number(prompt(`Digite o valor da transação`))
         if (codigo == 'V'){
             totalVista += valor
@@ -103,17 +103,17 @@ function exe6(){
 }
 function exe7(){
     let idade, altura, peso, idade50 = 0, idade10e20 = 0, somaAltura = 0, peso40 = 0
-    for (let i = 1; i <= 2; i++){
+    for (let i = 1; i <= 5; i++){
         do {
             idade = Number(prompt(`Informe a idade`))
         }
         while (idade < 0)
         do {
-            altura = Number(prompt(`Informe a idade`))
+            altura = Number(prompt(`Informe a altura`))
         }
         while (altura < 0)
         do {
-            peso = Number(prompt(`Informe a idade`))
+            peso = Number(prompt(`Informe o peso`))
         }
         while (peso < 0)
         
@@ -129,4 +129,100 @@ function exe7(){
         }
     }
     document.getElementById("resultado").innerHTML = `Pessoas c/ idade superior a 50: ${idade50} <br/> Média altura idade entre 10 e 20: ${somaAltura/idade10e20} <br/> Porcentagem de pessoas peso inferior a 40Kg: ${peso40/5*100}%`
+}
+function exe8(){
+    let idade, altura, peso, corOlhos, corCabelo, idadeEpeso = 0, somaIdade = 0, qtdePessoa = 0
+    let azul = 0, cabeloEolho = 0, media
+    for (let i = 1; i <= 6; i++){
+        do {
+            idade = Number(prompt(`Informe a idade`))
+        }
+        while (idade < 0)
+        do {
+            altura = Number(prompt(`Informe a altura`))
+        }
+        while (altura < 0)
+        do {
+            peso = Number(prompt(`Informe o peso`))
+        }
+        while (peso < 0)
+        do{
+            corOlhos = prompt(`Qual a cor dos olhos \n A - Azul; \n P - Preto; \n V - Verde; \n C - Castanho;`).toUpperCase()
+        }
+        while (corOlhos != 'A' && corOlhos != 'P' && corOlhos != 'V' && corOlhos != 'C')
+        do{
+            corCabelo = prompt(`Qual a cor do cabelo \n P - Preto; \n C - Castanho; \n L - Louro; \n R - Ruivo;`).toUpperCase()
+        }
+        while (corCabelo != 'P' && corCabelo != 'C' && corCabelo != 'L' && corCabelo != 'R')
+        if (idade > 50 && peso < 60){ // item 1
+            idadeEpeso++
+        }
+        if (altura <= 1.50){ // item 2
+            qtdePessoa++
+            somaIdade += idade
+        }
+        if (corOlhos == 'A'){ // item 3
+            azul++
+        }
+        if (corCabelo == 'R' && corOlhos != 'A'){ // item 4
+            cabeloEolho++
+        }
+    }
+    if (qtdePessoa == 0){
+        media = "Nenhuma"
+    }
+    else{
+        media = somaIdade/qtdePessoa
+    }
+    document.getElementById("resultado").innerHTML = `Item 1: ${idadeEpeso} <br/> Item 2: ${media} <br/> Item 3: ${azul/6*100}% <br/> Item 4: ${cabeloEolho}`
+}
+function exe9(){
+    let idade, peso, altura, somaIdade = 0, pesoEaltura = 0, qtde = 0, porcentagem
+    for (let i = 1; i <= 10; i++){
+        do {
+            idade = Number(prompt(`Informe a idade`))
+        }
+        while (idade < 0)
+        do {
+            altura = Number(prompt(`Informe a altura`))
+        }
+        while (altura < 0)
+        do {
+            peso = Number(prompt(`Informe o peso`))
+        }
+        while (peso < 0)
+        somaIdade += idade // item 1
+        if (peso > 90 && altura < 1.50){ // item 2
+            pesoEaltura++
+        }
+        if (idade >= 10 && idade <= 30 && altura > 1.90){ //item 3
+            qtde++
+        }
+    }
+    if (qtde == 0){
+        porcentagem = "0%"
+    }
+    else{
+        porcentagem = qtde/10*100
+    }
+    document.getElementById("resultado").innerHTML = `Item 1: ${somaIdade/10} <br/> Item 2: ${pesoEaltura} <br/> Item 3: ${porcentagem}%`
+}
+function exe10(){
+    let nro, i, contador, j, somaPrimo = 0, somaImpar = 0
+    for (i = 1; i <= 10; i++){
+        nro = Number(prompt("Digite um número"))
+        contador = 0
+        for (j = 1; j <= nro; j++){
+            if (nro % j == 0){
+                contador++
+            }  
+        }
+        if (contador == 2){
+            somaPrimo += nro
+        }
+        if (nro % 2 != 0){
+            somaImpar += nro
+        }
+    }
+    document.getElementById("resultado").innerHTML = `Soma nº Primo: ${somaPrimo} <br/> Soma nº ímpares: ${somaImpar}`
 }
