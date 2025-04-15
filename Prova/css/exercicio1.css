@@ -1,0 +1,24 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    display: flex;
+    margin-top: 10px;
+}
+input {
+    margin-top: 5px;
+}
+button {
+    margin-top: 10px;
+}
+body {
+    background-color: rgb(102, 102, 197);
+}
+table {
+    margin-top: 10px;
+}
+.dif {
+    height: 35vh;
+    overflow: auto;
+}
