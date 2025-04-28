@@ -7,7 +7,7 @@ function exe1(){
         }
         while (idade < 0)
         do {
-            altura = Number(prompt(`Informe a altura do ${i}º cachorro (metro)`))
+            altura = Number(prompt(`Informe a altura do ${i}º cachorro (metros)`))
         }
         while (altura < 0)
         do {
@@ -19,7 +19,7 @@ function exe1(){
         }
         while (raca != 'V' && raca != 'L' && raca != 'P')
         do{
-            pelo = prompt(`Informe a cor do pelo do ${i} cachorro \n P - Preto \n C - Castanho \n L - Loiro \n B - Branco`).toUpperCase()
+            pelo = prompt(`Informe a cor do pelo do ${i}º cachorro \n P - Preto \n C - Castanho \n L - Loiro \n B - Branco`).toUpperCase()
         }
         while (pelo != 'P' && pelo != 'C' && pelo != 'C' && pelo != 'B')
         
