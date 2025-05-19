@@ -152,3 +152,90 @@ function exe7(){
     }
     alert(`Qtde número negativo: ${negativo} \nSoma dos positivos: ${somaPositivo}`)
 }
+function exe8(){
+    let nomes = [], medias = []
+    for(let i=0;i<7;i++){
+        nomes.push(prompt(`Informe nome do aluno ${i+1}`))
+        medias.push(Number(prompt(`Informe média do aluno ${i+1}`)))
+    }
+    // calcular a maior média
+    let maior = medias[0]
+    for(let i=1;i<7;i++){
+        if (medias[i] > maior){
+            maior = medias[i]
+        }
+    }
+    // nome do aluno com a maior média
+    let pos = medias.indexOf(maior)
+    alert(`Nome do aluno com maior média ${maior} é ${nomes[pos]}`)
+    // calcular a nota necessária no exame final
+    for(let i=0;i<6;i++){ // percorre o vetor
+        if (medias[i] < 7){ // ficou para exame final
+            // nota necessária sabendo que média deve ser mínimo 5
+            alert(`${nomes[i]} precisa tirar ${10-medias[i]}`)
+        }
+    }
+}
+function exe9(){
+    let nomes = [], codigos = [], precos = []
+    for(let i=0;i<10;i++){
+        nomes.push(prompt(`Informe nome do produto ${i+1}`))
+        codigos.push(Number(prompt(`Informe código do produto ${i+1}`)))
+        precos.push(Number(prompt(`Informe preço do produto ${i+1}`)))
+        // let x = (int) (Math.random() * 10)
+    }
+    // gerar o relatório com os novos preços
+    for(let i=0;i<10;i++){
+        let novo
+        if (codigos[i] % 2 == 0 && precos[i] > 1000){
+            novo = precos[i] + precos[i] * 20/100
+        }
+        else if (codigos[i] % 2 == 0){
+            novo = precos[i] + precos[i] * 15/100
+        }
+        else if (precos[i] > 100){
+            novo = precos[i] + precos[i] * 10/100
+        }
+        else {
+            novo = precos[i]
+        }
+        alert(`${nomes[i]} - ${codigos[i]} - ${precos[i]} - ${novo}`)
+    }
+}
+function exe10(){
+    let vetor1 = [], vetor2 = []
+    let vetorr1 = [], vetorr2 = []
+    // entrada de dados
+    for(let i=0;i<10;i++){
+        vetor1.push(Number(prompt(`Informe o ${i+1}o. elemento do vetor 1`)))       
+    }
+    for(let i=0;i<5;i++){
+        vetor2.push(Number(prompt(`Informe o ${i+1}o. elemento do vetor 2`)))       
+    }
+    // calcular o vetor resultante 1
+    // calcular a soma dos elementos do vetor2
+    let somaVet2 = 0
+    for(let i=0; i<5;i++){
+        somaVet2 += vetor2[i]
+    }
+    // cria o vetor resultante 1
+    for(let i =0;i < 10; i++){
+        if (vetor1[i] % 2 == 0){
+            vetorr1.push(vetor1[i] + somaVet2)
+        }
+    }
+    alert(`Vetor resultante 1 ${vetorr1}`)
+    // calcula vetor resultante 2
+    for(let i=0;i<10;i++){ // para cada elemento de vetor 1
+        if (vetor1[i] % 2 == 1) {// verifica se elemento é ímpar
+            let qtdeDivisores = 0
+            for(let j=0;j<5;j++){ // para cada elemento de vetor 2
+                if (vetor1[i] % vetor2[j] == 0 ) { // encontrou um divisor
+                    qtdeDivisores++ // conta +1 nos divisores
+                }
+            }
+            vetorr2.push(qtdeDivisores) // adiciona contador no vetorr2
+        }
+    }
+    alert(`Vetor resultante 2 ${vetorr2}`)
+}
