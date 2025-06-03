@@ -2,7 +2,7 @@ function entrada(mat){
     for(let i = 0; i < 3; i++){
         mat[i] = []
         for(let j = 0; j < 5; j++){
-            mat[i][j] = perseInt(Math.random() * 10) + 15 //gera númro aleatorio entre 0 e 9
+            mat[i][j] = parseInt(Math.random() * 10) + 15 //gera númro aleatorio entre 0 e 9
         }
     }
 }
@@ -25,12 +25,13 @@ function exibeMatriz(mat){
             saida = saida + " " + mat[i][j]
         }
     }
+    alert(saida)
 }
 function exe1(){
     let mat = []
     entrada(mat)
-    exibeMatriz(mat)
     let soma = somaElemento(mat)
+    exibeMatriz(mat)
     alert(`A soma dos elementos entre 15 e 20 é: ${soma}`)
 }
 exe1()
