@@ -14,7 +14,7 @@ function saida(vet){
 function main(){
     let vetor = []
     // passando vetor como parâmetro da função
-    // vet vai receber um\ referência de vetor (passagem de parâmetro por referência)
+    // vet vai receber uma referência de vetor (passagem de parâmetro por referência)
     entrada(vetor) 
     processa(vetor)
     saida(vetor)

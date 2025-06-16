@@ -44,6 +44,30 @@ function cadastra(mat, vet) {
     }
     return soma
   }
+  function vendaMaior5000(mat, vat){
+    for (let i = 0; i < 12; i++){
+      let qtde = 0
+      for (let j = 0; j < 4; j++){
+        if (mat[i][j] > 5000){
+          qtde++
+        }
+      }
+      alert(`Em ${vet[i]} teve ${qtde} vendas maiores que R% 5.000,00`)
+    }
+  }
+  function vendaMesesMenores1000(mat, vet){
+    for (let i = 0; i < 12; i++){
+      let qtde = 0
+      for (let j = 0; j < 4; j++){
+        if (mat[i][j] < 1000){
+          qtde++
+        }
+      }
+      if (qtde > 0){
+        alert(`Em ${vet[i]} teve ${qtde} vendas menores que R$ 1.000,00`)
+      }
+    }
+  }
   function exe5() {
     let mat = []
     const vet = [
@@ -52,6 +76,8 @@ function cadastra(mat, vet) {
     cadastra(mat, vet)
     calculaTotalMes(mat, vet)
     calculaTotalSemana(mat)
+    vendaMaior5000(mat, vat)
+    vendaMesesMenores1000(mat, vet)
     alert(`Total vendido no ano ${calculaTotalAno(mat)}`)
   }
   exe5()
